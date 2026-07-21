@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventus Learning Hub - Community</title>
+    <!-- Gagamitin ang original base CSS mo -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Bagong CSS na eksaktong babagay sa style.css -->
+    <link rel="stylesheet" href="community.css">
+</head>
+<body>
+
+    <!-- Dynamic Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main class="content-body">
+        
+        <!-- Gallery View -->
+        <div id="community-gallery-view">
+            <div class="community-header-actions">
+                <div class="community-top-nav">
+                    <button class="comm-tab active" data-category="new">New</button>
+                    <button class="comm-tab" data-category="popular">Popular</button>
+                    <button class="comm-tab" data-category="discussed">Discussed</button>
+                </div>
+                <button class="btn-primary" id="open-post-modal-btn">+ Share Project</button>
+            </div>
+
+            <div class="community-filter-pills">
+                <button class="pill-btn active" data-filter="all">All</button>
+                <button class="pill-btn" data-filter="python">Python</button>
+                <button class="pill-btn" data-filter="scratch">Scratch</button>
+                <button class="pill-btn" data-filter="unity">Unity</button>
+                <button class="pill-btn" data-filter="roblox">Roblox</button>
+                <button class="pill-btn" data-filter="websites">Websites</button>
+            </div>
+
+            <div class="projects-grid" id="projects-grid-container"></div>
+        </div>
+
+        <!-- Detail View (Algorithmics Layout) -->
+        <div id="project-detail-view" style="display: none;">
+            <button class="btn-back-community" id="back-to-community-btn">← Back to Projects</button>
+            <div id="project-detail-content"></div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal-overlay" id="post-modal" style="display: none;">
+            <div class="modal-card">
+                <h2>Share Your Project</h2>
+                <form id="create-project-form">
+                    <div class="input-group">
+                        <label>Project Title</label>
+                        <input type="text" id="project-title-input" required placeholder="e.g. Space Shooter">
+                    </div>
+                    <div class="input-group">
+                        <label>Category / Language</label>
+                        <select id="project-tag-input">
+                            <option value="python">Python</option>
+                            <option value="scratch">Scratch</option>
+                            <option value="unity">Unity</option>
+                            <option value="roblox">Roblox</option>
+                            <option value="websites">Websites</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Description</label>
+                        <textarea id="project-desc-input" rows="3" required placeholder="Describe your project..."></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" id="close-post-modal-btn">Cancel</button>
+                        <button type="submit" class="btn-primary">Publish Project</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="community_router.js"></script>
+    <script src="load_header.js"></script>
+</body>
+</html>
